@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Results</title>
+  <style>
+    body { background-color: #f4f4f9; }
+    .container { margin-top: 50px; max-width: 600px; }
+    .table { font-size: 0.75rem; }
+    .btn { font-size: 0.75rem; padding: 0.3rem 0.4rem; }
+    .table-bordered { border: 1px solid #dee2e6; }
+    .table-bordered th, .table-bordered td { border: 1px solid #dee2e6; padding: 0.3rem; }
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Enrichment Results</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Emails</th>
+            <th scope="col">Addresses</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in data %}
+            <tr>
+              <td>{{ entry['emails'] | join(', ') }}</td>
+              <td>{{ entry['addresses'] | join(', ') }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
